@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//namespace Helloworld
+namespace BrainCSharp
+{
+    internal class HelloWorld
+    {
+        class Armosuite
+        {
+            public virtual void Initialze()
+            {
+                Console.WriteLine("Armoed");
+            }
+        }
+
+        class IronMan : Armosuite
+        {
+            public override void Initialze()
+            {
+                base.Initialze();
+                Console.WriteLine("Repulsor Rays Armed");
+            }
+        }
+
+        class WarmaChine : Armosuite
+        {
+            public override void Initialze()
+            {
+                base.Initialze();
+                Console.WriteLine("Double-Barrel Cannons Armoed");
+                Console.WriteLine("Micro-Roket");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Creating Armosuite...");
+            Armosuite armosuite = new Armosuite();
+            armosuite.Initialze();
+
+            Console.WriteLine("\nCreating Ironman...");
+            Armosuite ironman = new IronMan();
+            ironman.Initialze();
+
+            Console.WriteLine("\nCreating WarMachine...");
+            Armosuite warmachine = new WarmaChine();
+            warmachine.Initialze();
+
+        }
+    }
+}
